@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://dbaxrf0mn07nx"]
+
+[ext_resource type="Texture2D" uid="uid://c2wt83hloot30" path="res://assets/2D Pixel Dungeon Asset Pack/items_animation/torch.png" id="1_8m07j"]
+[ext_resource type="Script" uid="uid://bmevo2m1io05a" path="res://scripts/objects/object.gd" id="1_ypd75"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypd75"]
+atlas = ExtResource("1_8m07j")
+region = Rect2(0, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbo42"]
+atlas = ExtResource("1_8m07j")
+region = Rect2(16, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si6la"]
+atlas = ExtResource("1_8m07j")
+region = Rect2(32, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r25l"]
+atlas = ExtResource("1_8m07j")
+region = Rect2(48, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixpgn"]
+atlas = ExtResource("1_8m07j")
+region = Rect2(64, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4uh8"]
+atlas = ExtResource("1_8m07j")
+region = Rect2(80, 0, 16, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6dlfy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypd75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbo42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si6la")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r25l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixpgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4uh8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ypd75"]
+
+[node name="Torch" type="Area2D"]
+script = ExtResource("1_ypd75")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6dlfy")
+autoplay = "default"
+frame_progress = 0.606596
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ypd75")
