@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 @export var speed = 100.0
+@export var max_health = 100
+var current_health
+var is_dead = false
 
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
@@ -8,9 +11,12 @@ extends CharacterBody2D
 var last_direction = "down"
 
 func _ready():
+	current_health = max_health
 	animation_player.play("idledown")
 
 func _physics_process(_delta):
+	if is_dead:
+		return
 	
 	var input_vector = Vector2.ZERO
 	var new_direction = ""
@@ -40,3 +46,26 @@ func _physics_process(_delta):
 		animation_player.play("walk" + last_direction)
 	else:
 		animation_player.play("idle" + last_direction)
+
+func take_damage(damage):
+	if is_dead:
+		return
+		
+	current_health -= damage
+	print("Vida atual: ", current_health)
+	
+	if current_health <= 0:
+		die()
+
+func die():
+	is_dead = true
+	current_health = 0
+	
+	# Usa a animação específica de morte na direção correta
+	animation_player.play("dead" + last_direction)
+	
+	print("Player morreu!")
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		take_damage(50)
