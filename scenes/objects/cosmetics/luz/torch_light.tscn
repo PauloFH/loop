@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://cfbpvvwxajqi0"]
+
+[ext_resource type="Texture2D" uid="uid://d3tlsk542e2m2" path="res://assets/2D Pixel Dungeon Asset Pack/items_animation/torch_light.png" id="1_n8tsc"]
+[ext_resource type="Script" uid="uid://bmevo2m1io05a" path="res://scripts/objects/coletaveis/object.gd" id="1_ye8vb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye8vb"]
+atlas = ExtResource("1_n8tsc")
+region = Rect2(0, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6wx2"]
+atlas = ExtResource("1_n8tsc")
+region = Rect2(16, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu6n5"]
+atlas = ExtResource("1_n8tsc")
+region = Rect2(32, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b78a"]
+atlas = ExtResource("1_n8tsc")
+region = Rect2(48, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1cwc"]
+atlas = ExtResource("1_n8tsc")
+region = Rect2(64, 0, 16, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb4fa"]
+atlas = ExtResource("1_n8tsc")
+region = Rect2(80, 0, 16, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yfvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye8vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6wx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu6n5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b78a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1cwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb4fa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ye8vb"]
+radius = 6.0
+height = 20.0
+
+[node name="TorchLight" type="Area2D"]
+script = ExtResource("1_ye8vb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3yfvk")
+autoplay = "default"
+frame_progress = 0.226441
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ye8vb")
+disabled = true

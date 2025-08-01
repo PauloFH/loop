@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2kcmxhx1577t"]
+
+[ext_resource type="Script" uid="uid://cqahb4qssne52" path="res://scripts/objects/coletaveis/pocao2.gd" id="1_ay0lv"]
+[ext_resource type="Texture2D" uid="uid://rodgs5swllq3" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_2_1.png" id="2_ay0lv"]
+[ext_resource type="Texture2D" uid="uid://dqj0kkbedx7l" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_2_2.png" id="3_637qn"]
+[ext_resource type="Texture2D" uid="uid://clqyov350f0rg" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_2_3.png" id="4_dj46b"]
+[ext_resource type="Texture2D" uid="uid://ddibfbtb4jn5l" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_2_4.png" id="5_h3cyh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t100e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ay0lv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_637qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dj46b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h3cyh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5pntm"]
+radius = 6.0
+
+[node name="Pocao2" type="Area2D"]
+script = ExtResource("1_ay0lv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t100e")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_5pntm")
