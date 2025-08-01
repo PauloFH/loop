@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ys64ayyd0eay" path="res://scenes/objects/coletaveis/chaves/key_g.tscn" id="5_h1rjs"]
 [ext_resource type="PackedScene" uid="uid://dbaxrf0mn07nx" path="res://scenes/objects/cosmetics/luz/torch.tscn" id="6_64pgk"]
 [ext_resource type="PackedScene" uid="uid://cfbpvvwxajqi0" path="res://scenes/objects/cosmetics/luz/torch_light.tscn" id="7_j0l3m"]
-[ext_resource type="PackedScene" uid="uid://lprrw4rjd0qg" path="res://scenes/objects/traps/spike_traps/floor_spike.tscn" id="8_h1rjs"]
+[ext_resource type="PackedScene" uid="uid://i0x8nm7mlt33" path="res://scenes/objects/traps/spike_traps/auto_floor_spikes.tscn" id="8_h1rjs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcsgt"]
 texture = ExtResource("1_706jr")
@@ -240,5 +240,5 @@ position = Vector2(105, 8)
 [node name="Torch4" parent="." instance=ExtResource("7_j0l3m")]
 position = Vector2(184, 5)
 
-[node name="Spike" parent="." instance=ExtResource("8_h1rjs")]
-position = Vector2(190, 80)
+[node name="auto_floor_spike" parent="." instance=ExtResource("8_h1rjs")]
+position = Vector2(211, 73)
