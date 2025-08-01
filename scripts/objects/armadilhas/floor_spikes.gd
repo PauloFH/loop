@@ -7,32 +7,33 @@ extends TrapBase
 @export var spike_duration: float = 2.0
 @export var warning_time: float = 0.5
 
-@onready var area_2d = self
 @onready var sprite = $Sprite2D
-@onready var collision = $CollisionShape2D
+@onready var activate_collision = $activate_box/CollisionShape2D
+@onready var damage_collision = $damage_box/CollisionShape2D
 
-# Tem como função guardar o estado onde é possível causar dano no jogador ao colidir
-var spikes_out:bool = false
 
-func setup_trap():
-	area_2d.body_entered.connect(_on_body_entered)
-	sprite.modulate = Color.WHITE
+
+func _on_activate_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		trigger_trap(body)
+
+func _on_damage_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		body.take_damage(damage)
+
 
 ## WARNING: caso o jogador entre e fique na trap enquanto ela está em cooldown, é possível que a trap
 ## não seja ativada novamente depois que o tempo de cooldown seja restituido. Pode ser necessário re
 ## fatorar o código do player ou desta trap caso essa interação não seja desejada.
-func _on_body_entered(body):
-	if body.is_in_group("player"):
-		if spikes_out:
-			body.take_damage(damage)
-		else: 
-			trigger_trap(body)
+
 
 func activate_trap(body):
 	sprite.frame = 1
 	await get_tree().create_timer(warning_time).timeout
 	sprite.play("default")
-	spikes_out = true
+	activate_collision.disabled = true
+	damage_collision.disabled = false
 	await get_tree().create_timer(spike_duration).timeout
-	spikes_out = false
 	sprite.play_backwards("default")
+	activate_collision.disabled = false
+	damage_collision.disabled = true

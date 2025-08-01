@@ -29,7 +29,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ud1lh"]
 size = Vector2(16, 16)
 
-[node name="floor_spike" type="Area2D"]
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_rvj1i")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -37,6 +37,18 @@ position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_jgqgx")
 speed_scale = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="activate_box" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="activate_box"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_ud1lh")
+
+[node name="damage_box" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage_box"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ud1lh")
+disabled = true
+
+[connection signal="body_entered" from="activate_box" to="." method="_on_activate_box_body_entered"]
+[connection signal="body_entered" from="damage_box" to="." method="_on_damage_box_body_entered"]
