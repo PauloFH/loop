@@ -1,4 +1,4 @@
-extends "res://scripts/objects/object.gd"
+extends object_base
 
 func on_collect(_player):
 	print("Chave dourada coletada!")

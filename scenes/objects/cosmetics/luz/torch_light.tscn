@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cfbpvvwxajqi0"]
 
 [ext_resource type="Texture2D" uid="uid://d3tlsk542e2m2" path="res://assets/2D Pixel Dungeon Asset Pack/items_animation/torch_light.png" id="1_n8tsc"]
-[ext_resource type="Script" uid="uid://bmevo2m1io05a" path="res://scripts/objects/object.gd" id="1_ye8vb"]
+[ext_resource type="Script" uid="uid://bmevo2m1io05a" path="res://scripts/objects/coletaveis/object.gd" id="1_ye8vb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ye8vb"]
 atlas = ExtResource("1_n8tsc")
@@ -67,3 +67,4 @@ frame_progress = 0.226441
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ye8vb")
+disabled = true

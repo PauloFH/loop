@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dgehyqr84c43m" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset_v2.png" id="1_706jr"]
 [ext_resource type="Texture2D" uid="uid://ddj3hc7fcpu6n" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_8as5f"]
 [ext_resource type="PackedScene" uid="uid://bqgbbcxdbpcvg" path="res://scenes/player/player.tscn" id="3_glcct"]
-[ext_resource type="PackedScene" uid="uid://cjf2uertfo6qh" path="res://scenes/objects/key_f.tscn" id="4_cpet7"]
-[ext_resource type="PackedScene" uid="uid://ys64ayyd0eay" path="res://scenes/objects/key_g.tscn" id="5_h1rjs"]
-[ext_resource type="PackedScene" uid="uid://dbaxrf0mn07nx" path="res://scenes/objects/torch.tscn" id="6_64pgk"]
-[ext_resource type="PackedScene" uid="uid://cfbpvvwxajqi0" path="res://scenes/objects/torch_light.tscn" id="7_j0l3m"]
+[ext_resource type="PackedScene" uid="uid://cjf2uertfo6qh" path="res://scenes/objects/coletaveis/chaves/key_f.tscn" id="4_cpet7"]
+[ext_resource type="PackedScene" uid="uid://ys64ayyd0eay" path="res://scenes/objects/coletaveis/chaves/key_g.tscn" id="5_h1rjs"]
+[ext_resource type="PackedScene" uid="uid://dbaxrf0mn07nx" path="res://scenes/objects/cosmetics/luz/torch.tscn" id="6_64pgk"]
+[ext_resource type="PackedScene" uid="uid://cfbpvvwxajqi0" path="res://scenes/objects/cosmetics/luz/torch_light.tscn" id="7_j0l3m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcsgt"]
 texture = ExtResource("1_706jr")

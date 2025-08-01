@@ -1,5 +1,6 @@
-# object.gd - deve ser assim
-extends Area2D  # NÃO StaticBody2D
+extends Area2D
+
+class_name object_base
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -14,4 +15,4 @@ func _on_body_entered(body):
 		on_collect(body)
 
 func on_collect(_player):
-	pass  # Sobrescrito pelos filhos
+	pass

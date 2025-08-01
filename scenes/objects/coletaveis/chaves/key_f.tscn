@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cjf2uertfo6qh"]
 
-[ext_resource type="Script" uid="uid://c1j4r5gky4l5q" path="res://scripts/objects/key_f.gd" id="1_5pntm"]
+[ext_resource type="Script" uid="uid://c1j4r5gky4l5q" path="res://scripts/objects/coletaveis/key_f.gd" id="1_5pntm"]
 [ext_resource type="Texture2D" uid="uid://dpcmyypdypih7" path="res://assets/2D Pixel Dungeon Asset Pack/items_animation/keys_m.png" id="1_vnq8e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_52ke0"]
