@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="loop"
+config/version="1.0"
 run/main_scene="uid://cgkami7ndyrxg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*res://scripts/managers/SceneManager.gd"
+SettingsManager="*res://scripts/managers/SettingsManager.gd"
+GameManager="*res://scripts/managers/GameManager.gd"
 
 [display]
 
