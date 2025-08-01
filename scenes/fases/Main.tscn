@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cgkami7ndyrxg"]
+[gd_scene load_steps=12 format=4 uid="uid://cgkami7ndyrxg"]
 
 [ext_resource type="Texture2D" uid="uid://dgehyqr84c43m" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset_v2.png" id="1_706jr"]
 [ext_resource type="Texture2D" uid="uid://ddj3hc7fcpu6n" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_8as5f"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ys64ayyd0eay" path="res://scenes/objects/coletaveis/chaves/key_g.tscn" id="5_h1rjs"]
 [ext_resource type="PackedScene" uid="uid://dbaxrf0mn07nx" path="res://scenes/objects/cosmetics/luz/torch.tscn" id="6_64pgk"]
 [ext_resource type="PackedScene" uid="uid://cfbpvvwxajqi0" path="res://scenes/objects/cosmetics/luz/torch_light.tscn" id="7_j0l3m"]
+[ext_resource type="PackedScene" uid="uid://lprrw4rjd0qg" path="res://scenes/objects/traps/spike_traps/floor_spike.tscn" id="8_h1rjs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcsgt"]
 texture = ExtResource("1_706jr")
@@ -238,3 +239,6 @@ position = Vector2(105, 8)
 
 [node name="Torch4" parent="." instance=ExtResource("7_j0l3m")]
 position = Vector2(184, 5)
+
+[node name="Spike" parent="." instance=ExtResource("8_h1rjs")]
+position = Vector2(190, 80)
