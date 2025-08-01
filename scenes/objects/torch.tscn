@@ -54,6 +54,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ypd75"]
+radius = 5.0
+height = 22.0
 
 [node name="Torch" type="Area2D"]
 script = ExtResource("1_ypd75")
@@ -61,7 +63,7 @@ script = ExtResource("1_ypd75")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6dlfy")
 autoplay = "default"
-frame_progress = 0.606596
+frame_progress = 0.0498801
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ypd75")

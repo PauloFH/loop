@@ -21,6 +21,8 @@ var death_position = Vector2.ZERO
 func _ready():
 	current_health = max_health
 	animation_player.play("idledown")
+	collision_mask = 1
+	collision_layer = 1
 
 func _physics_process(_delta):
 	if is_ghost:
@@ -135,3 +137,23 @@ func generate_new_body():
 	collision_mask = 1
 	
 	print("Gerou novo corpo!")
+
+
+
+func has_key(key_type: String) -> bool:
+	match key_type:
+		"gold":
+			return key_g > 0
+		"iron":
+			return key_f > 0
+		_:
+			return false
+
+func use_key(key_type: String):
+	match key_type:
+		"gold":
+			if key_g > 0:
+				key_g -= 1
+		"iron":  
+			if key_f > 0:
+				key_f -= 1
