@@ -22,11 +22,6 @@ func _on_damage_box_body_entered(body: Node2D) -> void:
 		body.take_damage(damage)
 
 
-## WARNING: caso o jogador entre e fique na trap enquanto ela está em cooldown, é possível que a trap
-## não seja ativada novamente depois que o tempo de cooldown seja restituido. Pode ser necessário re
-## fatorar o código do player ou desta trap caso essa interação não seja desejada.
-
-
 func activate_trap(body):
 	sprite.frame = 1
 	await get_tree().create_timer(warning_time).timeout
