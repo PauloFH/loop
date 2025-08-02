@@ -12,7 +12,6 @@ outline_size = 10
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-scale = Vector2(0.374529, 0.373392)
 script = ExtResource("1_bqojv")
 
 [node name="bg" type="TextureRect" parent="."]
