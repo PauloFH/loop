@@ -11,8 +11,6 @@ func activate_trap(body: Node2D) -> void:
 
 # Desabilita o segundo nó filho do corpo que for detectada a colisão aqui...
 # da forma mais troncha que eu consigo imaginar
-func _on_pull_body_collider_body_entered(body: Node2D) -> void:
-
 func _on_fall_collision_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		call_deferred("activate_trap", body)

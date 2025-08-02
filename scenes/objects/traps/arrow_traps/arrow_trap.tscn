@@ -30,12 +30,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihydr"]
-size = Vector2(20, 68)
+size = Vector2(70, 20)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_uxfep")
 
 [node name="sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(10, 0)
+rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_k2ciq")
 frame = 4
 frame_progress = 1.0
@@ -43,7 +45,7 @@ frame_progress = 1.0
 [node name="activate_box" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="activate_box"]
-position = Vector2(0, 23)
+position = Vector2(35, 0)
 shape = SubResource("RectangleShape2D_ihydr")
 
 [connection signal="body_entered" from="activate_box" to="." method="_on_activate_box_body_entered"]

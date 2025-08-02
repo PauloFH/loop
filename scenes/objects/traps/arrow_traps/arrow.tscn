@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bfxnnx6pamam7" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/arrow/Just_arrow.png" id="1_gijhi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6edmg"]
-size = Vector2(7, 11)
+size = Vector2(11, 7)
 
 [node name="Arrow" type="Area2D"]
-rotation = -1.57079
 script = ExtResource("1_6edmg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
 texture = ExtResource("1_gijhi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
