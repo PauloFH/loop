@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cgkami7ndyrxg"]
+[gd_scene load_steps=15 format=4 uid="uid://cgkami7ndyrxg"]
 
 [ext_resource type="Texture2D" uid="uid://dgehyqr84c43m" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset_v2.png" id="1_706jr"]
 [ext_resource type="Texture2D" uid="uid://ddj3hc7fcpu6n" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_8as5f"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://i0x8nm7mlt33" path="res://scenes/objects/traps/spike_traps/auto_floor_spikes.tscn" id="8_h1rjs"]
 [ext_resource type="PackedScene" uid="uid://c3n83t6gp5c5t" path="res://scenes/objects/traps/flamethrower/flamethrower.tscn" id="9_64pgk"]
 [ext_resource type="PackedScene" uid="uid://lprrw4rjd0qg" path="res://scenes/objects/traps/spike_traps/floor_spike.tscn" id="10_j0l3m"]
+[ext_resource type="PackedScene" uid="uid://b7j2yf2am7fcr" path="res://scenes/objects/traps/arrow_traps/arrow_trap.tscn" id="11_1ch7g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcsgt"]
 texture = ExtResource("1_706jr")
@@ -251,3 +252,7 @@ rotation = 1.57079
 
 [node name="floor_spike" parent="." instance=ExtResource("10_j0l3m")]
 position = Vector2(186, 42)
+
+[node name="arrow_trap" parent="." instance=ExtResource("11_1ch7g")]
+position = Vector2(293, 115)
+rotation = 1.57079
