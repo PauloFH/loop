@@ -1,0 +1,17 @@
+extends TrapBase
+
+func activate_trap(body: Node2D) -> void:
+	body.global_position = global_position + Vector2(0, -5)
+	body.take_damage(100)
+	can_trigger = false
+	$fall_collision/CollisionShape2D.disabled = true
+	await body.get_node("AnimationPlayer").current_animation_changed
+	$pull_body_collision/CollisionShape2D.disabled = false
+
+func _on_pull_body_collider_body_entered(body: Node2D) -> void:
+	if !body.is_in_group("player"):
+		body.get_child(1).call_deferred("set", "disabled", true)
+
+func _on_fall_collision_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		call_deferred("activate_trap", body)

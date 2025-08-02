@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://diqy68iudk340"]
+
+[ext_resource type="Script" uid="uid://bb0h43nylcgy5" path="res://scenes/objects/traps/hole_trap/hole_trap.gd" id="1_8alv6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kypfk"]
+size = Vector2(5, 5)
+
+[node name="HoleTrap" type="Node2D"]
+script = ExtResource("1_8alv6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="fall_collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fall_collision"]
+shape = SubResource("RectangleShape2D_kypfk")
+
+[node name="pull_body_collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pull_body_collision"]
+shape = SubResource("RectangleShape2D_kypfk")
+disabled = true
+
+[connection signal="body_entered" from="fall_collision" to="." method="_on_fall_collision_body_entered"]
+[connection signal="body_entered" from="pull_body_collision" to="." method="_on_pull_body_collider_body_entered"]
