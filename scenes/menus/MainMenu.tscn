@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwc600gg8q0ap"]
+[gd_scene load_steps=8 format=3 uid="uid://dwc600gg8q0ap"]
 
 [ext_resource type="Script" uid="uid://5dom38bboesg" path="res://scripts/menus/MainMenu.gd" id="1_bqojv"]
 [ext_resource type="Texture2D" uid="uid://dwrk6gthiber3" path="res://assets/2D Pixel Dungeon Asset Pack/capa-export.png" id="1_wlpbi"]
@@ -8,6 +8,12 @@
 [sub_resource type="LabelSettings" id="LabelSettings_bqojv"]
 font_size = 61
 outline_size = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqojv"]
+
+[sub_resource type="Theme" id="Theme_ldf1p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tyyoy"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -48,6 +54,7 @@ horizontal_alignment = 1
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bqojv")
 
 [node name="ButtonContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -76,6 +83,8 @@ text = "Sair"
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_ldf1p")
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tyyoy")
 
 [node name="VersionLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

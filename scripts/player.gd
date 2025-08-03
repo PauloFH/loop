@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-@export var speed = 100.0
-@export var key_g = 0
-@export var key_f = 0
+const Key = preload("res://scripts/objects/coletaveis/Key.gd")
+
+@export var speed = 400.0
 @export var max_health = 100
+@export var key_g = 0
 var current_health
 var is_dead = false
 
@@ -11,24 +12,26 @@ var is_dead = false
 var is_ghost = false
 var ghost_timer = 0.0
 
-
+var collected_keys = []
 
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 
 var last_direction = "down"
 var death_position = Vector2.ZERO
+
 func _ready():
 	current_health = max_health
 	animation_player.play("idledown")
 	collision_mask = 1
 	collision_layer = 1
+	add_to_group("player")
 
 func _physics_process(_delta):
 	if is_ghost:
-			ghost_timer -= _delta
-			if ghost_timer <= 0:
-				generate_new_body()
+		ghost_timer -= _delta
+		if ghost_timer <= 0:
+			generate_new_body()
 	
 	if is_dead:
 		return
@@ -56,6 +59,9 @@ func _physics_process(_delta):
 	
 	velocity = input_vector * speed
 	move_and_slide()
+
+	# REMOVIDO: A verificação de colisão com portões
+	# Agora o próprio portão detecta o player através da Area2D
 	
 	if velocity.length() > 0:
 		animation_player.play("walk" + last_direction)
@@ -72,7 +78,6 @@ func take_damage(damage):
 	if current_health <= 0:
 		die()
 
-
 func die():
 	if is_dead:
 		return
@@ -85,9 +90,6 @@ func die():
 	become_ghost()
 	
 	print("Player morreu!")
-
-
-
 
 func _input(event):
 	if event.is_action_pressed("ui_accept") and not is_ghost:
@@ -102,8 +104,6 @@ func become_ghost():
 	collision_mask = 2
 	
 	print("Virou fantasma!")
-
-
 
 func create_corpse():
 	var corpse = StaticBody2D.new()
@@ -143,22 +143,11 @@ func generate_new_body():
 	
 	print("Gerou novo corpo!")
 
+func add_key(key_type):
+	collected_keys.append(key_type)
 
+func has_key(key_type) -> bool:
+	return key_type in collected_keys
 
-func has_key(key_type: String) -> bool:
-	match key_type:
-		"gold":
-			return key_g > 0
-		"iron":
-			return key_f > 0
-		_:
-			return false
-
-func use_key(key_type: String):
-	match key_type:
-		"gold":
-			if key_g > 0:
-				key_g -= 1
-		"iron":  
-			if key_f > 0:
-				key_f -= 1
+func use_key(key_type):
+	collected_keys.erase(key_type)

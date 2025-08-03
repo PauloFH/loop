@@ -20,7 +20,7 @@ func go_to_main_menu():
 	goto_scene("res://scenes/menus/MainMenu.tscn")
 
 func go_to_level_1():
-	goto_scene("res://scenes/fases/Main.tscn")
+	goto_scene("res://scenes/fases/fase3.tscn")
 
 func go_to_settings():
 	goto_scene("res://scenes/menus/SettingsMenu.tscn")
