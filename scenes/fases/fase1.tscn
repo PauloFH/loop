@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxcyr65h38qh6"]
+
+[ext_resource type="PackedScene" uid="uid://bqgbbcxdbpcvg" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://h5w8f8j8f8j8" path="res://scenes/objects/coletaveis/KeyG.tscn" id="2_key_g"]
+[ext_resource type="PackedScene" uid="uid://d5w8f8j8f8j8" path="res://scenes/objects/GateR.tscn" id="3_gate_r"]
+[ext_resource type="PackedScene" uid="uid://s5w8f8j8f8j8" path="res://scenes/objects/Stairs.tscn" id="4_stairs"]
+
+[node name="Fase1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(100, 100)
+
+[node name="KeyG" parent="." instance=ExtResource("2_key_g")]
+position = Vector2(200, 100)
+
+[node name="GateR" parent="." instance=ExtResource("3_gate_r")]
+position = Vector2(300, 100)
+
+[node name="Stairs" parent="." instance=ExtResource("4_stairs")]
+position = Vector2(400, 100)
+next_level_path = "res://scenes/fases/fase2.tscn"

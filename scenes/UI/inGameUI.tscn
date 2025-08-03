@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://cum3aucbnk3dc"]
+
+[ext_resource type="Texture2D" uid="uid://c0it755rtnacw" path="res://assets/UI/01_Flat_Theme/Sprites/UI_Flat_IconStripe01a.png" id="1_jug8d"]
+[ext_resource type="Texture2D" uid="uid://b0cmpteupdqxg" path="res://assets/UI/01_Flat_Theme/Spritesheets/Spritesheet_UI_Flat.png" id="2_raxw4"]
+
+[sub_resource type="Theme" id="Theme_dxrw3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_raxw4"]
+
+[node name="InGameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="mainMenu" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00041, 0.999583)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainMenu"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="mainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_dxrw3")
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("1_jug8d")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="popUpMenu" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="basemenuScreen" type="MarginContainer" parent="popUpMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="popUpMenu/basemenuScreen"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+texture = ExtResource("2_raxw4")
+region_rect = Rect2(320, 32, 64, 32)
+patch_margin_top = 5
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="popUpMenu/basemenuScreen/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="popUpMenu/basemenuScreen/NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="popUpMenu/basemenuScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Jogo Pausado"
+
+[node name="HSeparator" type="HSeparator" parent="popUpMenu/basemenuScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_raxw4")
+
+[node name="Button2" type="Button" parent="popUpMenu/basemenuScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Continuar"
+icon_alignment = 1
+expand_icon = true
+
+[node name="HSeparator2" type="HSeparator" parent="popUpMenu/basemenuScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_raxw4")
+
+[node name="Button" type="Button" parent="popUpMenu/basemenuScreen/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "sair
+"

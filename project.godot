@@ -11,14 +11,21 @@ config_version=5
 [application]
 
 config/name="loop"
-run/main_scene="uid://cgkami7ndyrxg"
+config/version="1.0"
+run/main_scene="uid://dwc600gg8q0ap"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneManager="*res://scripts/managers/SceneManager.gd"
+SettingsManager="*res://scripts/managers/SettingsManager.gd"
+GameManager="*res://scripts/managers/GameManager.gd"
+
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=180
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="viewport"
 
 [editor]

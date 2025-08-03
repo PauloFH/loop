@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://d5w8f8j8f8j8"]
+
+[ext_resource type="Script" uid="uid://257fkqfslxc1" path="res://scripts/objects/Gate.gd" id="1_g8j8f"]
+[ext_resource type="Texture2D" uid="uid://bv877tebxq2l3" path="res://assets/2D Pixel Dungeon Asset Pack/items_animation/gate r.png" id="2_l38k2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l38k2"]
+size = Vector2(15.5, 14.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rdx0"]
+atlas = ExtResource("2_l38k2")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gsho"]
+atlas = ExtResource("2_l38k2")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bux3d"]
+atlas = ExtResource("2_l38k2")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kq1e"]
+atlas = ExtResource("2_l38k2")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpi80"]
+atlas = ExtResource("2_l38k2")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_45cfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rdx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gsho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bux3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kq1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpi80")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8j8f"]
+size = Vector2(16, 26)
+
+[node name="GateR" type="StaticBody2D" groups=["gates"]]
+script = ExtResource("1_g8j8f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_l38k2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 16)
+sprite_frames = SubResource("SpriteFrames_45cfp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, 13)
+shape = SubResource("RectangleShape2D_g8j8f")
