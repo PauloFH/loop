@@ -242,7 +242,7 @@ _data = {
 
 [node name="Player" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -258,3 +258,6 @@ shape = SubResource("CapsuleShape2D_dovo2")
 libraries = {
 &"": SubResource("AnimationLibrary_0tnpc")
 }
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2(0.287956, 0.504964)

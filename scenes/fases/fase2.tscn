@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtca2i6svjww7"]
+
+[ext_resource type="PackedScene" uid="uid://bqgbbcxdbpcvg" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://q5w8f8j8f8j8" path="res://scenes/objects/PressurePlate.tscn" id="2_pressure_plate"]
+[ext_resource type="PackedScene" uid="uid://b5w8f8j8f8j8" path="res://scenes/objects/GateB.tscn" id="3_gate_b"]
+[ext_resource type="PackedScene" uid="uid://s5w8f8j8f8j8" path="res://scenes/objects/Stairs.tscn" id="4_stairs"]
+
+[node name="Fase2" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="PressurePlate" parent="." instance=ExtResource("2_pressure_plate")]
+position = Vector2(200, 100)
+
+[node name="GateB" parent="." instance=ExtResource("3_gate_b")]
+position = Vector2(300, 100)
+
+[node name="Stairs" parent="." instance=ExtResource("4_stairs")]
+position = Vector2(400, 100)
+next_level_path = "res://scenes/fases/fase3.tscn"
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(100, 100)
+
+[connection signal="activated" from="PressurePlate" to="GateB" method="open_gate"]

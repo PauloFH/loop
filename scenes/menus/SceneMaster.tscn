@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpghmn8d2k0xu"]
+
+[ext_resource type="Script" uid="uid://80woskgxt7wr" path="res://scripts/managers/scene_master.gd" id="1_8pr53"]
+[ext_resource type="AudioStream" uid="uid://64mw0dq3g0il" path="res://assets/looping_dungeon.wav" id="2_8nkie"]
+[ext_resource type="PackedScene" uid="uid://dwc600gg8q0ap" path="res://scenes/menus/MainMenu.tscn" id="2_ojyfg"]
+
+[node name="SceneMaster" type="Node2D"]
+script = ExtResource("1_8pr53")
+initial_scene = ExtResource("2_ojyfg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8nkie")
+volume_db = -6.71
+autoplay = true

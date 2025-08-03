@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=3 uid="uid://lsp7pnv77wg2"]
+
+[ext_resource type="Script" uid="uid://dw1kqf74ym1hd" path="res://scripts/managers/SettingsManager.gd" id="1_krd2w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_krd2w"]
+font_size = 30
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 248.0
+offset_top = 63.0
+offset_right = 248.0
+offset_bottom = 63.0
+scale = Vector2(1.65834, 1.72649)
+script = ExtResource("1_krd2w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 329.0
+offset_bottom = 308.0
+color = Color(0.431373, 0.431373, 0.431373, 0.717647)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 178.0
+
+[node name="Title" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Configurações"
+label_settings = SubResource("LabelSettings_krd2w")
+horizontal_alignment = 1
+
+[node name="SettingsContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="AudioSection" type="VBoxContainer" parent="ColorRect/VBoxContainer/SettingsContainer"]
+layout_mode = 2
+
+[node name="AudioLabel" type="Label" parent="ColorRect/VBoxContainer/SettingsContainer/AudioSection"]
+layout_mode = 2
+text = "Áudio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterVolumeContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/SettingsContainer/AudioSection"]
+layout_mode = 2
+
+[node name="MasterLabel" type="Label" parent="ColorRect/VBoxContainer/SettingsContainer/AudioSection/MasterVolumeContainer"]
+layout_mode = 2
+text = "Volume Geral"
+
+[node name="MasterSlider" type="HSlider" parent="ColorRect/VBoxContainer/SettingsContainer/AudioSection/MasterVolumeContainer"]
+layout_mode = 2
+
+[node name="SFXVolumeContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/SettingsContainer/AudioSection"]
+layout_mode = 2
+
+[node name="SFXLabel" type="Label" parent="ColorRect/VBoxContainer/SettingsContainer/AudioSection/SFXVolumeContainer"]
+layout_mode = 2
+text = "Efeitos Sonoros"
+
+[node name="SFXSlider" type="HSlider" parent="ColorRect/VBoxContainer/SettingsContainer/AudioSection/SFXVolumeContainer"]
+layout_mode = 2
+
+[node name="MusicVolumeContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/SettingsContainer/AudioSection"]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="ColorRect/VBoxContainer/SettingsContainer/AudioSection/MusicVolumeContainer"]
+layout_mode = 2
+text = "Música"
+
+[node name="MusicSlider" type="HSlider" parent="ColorRect/VBoxContainer/SettingsContainer/AudioSection/MusicVolumeContainer"]
+layout_mode = 2
+
+[node name="VideoSection" type="VBoxContainer" parent="ColorRect/VBoxContainer/SettingsContainer"]
+layout_mode = 2
+
+[node name="VideoLabel" type="Label" parent="ColorRect/VBoxContainer/SettingsContainer/VideoSection"]
+layout_mode = 2
+text = "Vídeo"
+horizontal_alignment = 1
+
+[node name="FullscreenCheck" type="CheckBox" parent="ColorRect/VBoxContainer/SettingsContainer/VideoSection"]
+layout_mode = 2
+text = "Tela Cheia"
+
+[node name="VsyncCheck" type="CheckBox" parent="ColorRect/VBoxContainer/SettingsContainer/VideoSection"]
+layout_mode = 2
+text = "VSync
+"
+
+[node name="ButtonContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/SettingsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
+
+[node name="BackButton" type="Button" parent="ColorRect/VBoxContainer/SettingsContainer/ButtonContainer"]
+layout_mode = 2
+text = "Voltar"
+
+[node name="BackButton2" type="Button" parent="ColorRect/VBoxContainer/SettingsContainer/ButtonContainer"]
+layout_mode = 2
+text = "Aplicar"

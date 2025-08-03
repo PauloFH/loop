@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwc600gg8q0ap"]
+
+[ext_resource type="Script" uid="uid://5dom38bboesg" path="res://scripts/menus/MainMenu.gd" id="1_bqojv"]
+[ext_resource type="Texture2D" uid="uid://dwrk6gthiber3" path="res://assets/2D Pixel Dungeon Asset Pack/capa-export.png" id="1_wlpbi"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wlpbi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqojv"]
+font_size = 61
+outline_size = 10
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bqojv")
+
+[node name="bg" type="TextureRect" parent="."]
+modulate = Color(0.129412, 0.054902, 0.0941176, 1)
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 170.0
+scale = Vector2(2.67, 2.832)
+texture = SubResource("CanvasTexture_wlpbi")
+
+[node name="image" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(2.67, 2.67)
+texture = ExtResource("1_wlpbi")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 853.0
+offset_bottom = 482.0
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "LOOP"
+label_settings = SubResource("LabelSettings_bqojv")
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+size_flags_stretch_ratio = 6.21
+alignment = 1
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 0.28)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Iniciar"
+icon_alignment = 1
+expand_icon = true
+language = "pt_BR"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 0.28)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Sair"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VersionLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+text = "v1.0"
+horizontal_alignment = 2
+vertical_alignment = 2
+justification_flags = 171
