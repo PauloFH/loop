@@ -255,13 +255,8 @@ rotation = 1.57079
 position = Vector2(186, 42)
 
 [node name="arrow_trap" parent="." instance=ExtResource("11_1ch7g")]
-position = Vector2(100, 125)
-rotation = -3.40339
-detect_area_size = 140.0
+position = Vector2(232, 148)
+rotation = 3.14159
 
 [node name="HoleTrap" parent="." instance=ExtResource("12_rfjr7")]
 position = Vector2(104, 56)
-
-[node name="debug" type="Camera2D" parent="."]
-position = Vector2(158, 87)
-zoom = Vector2(3.48, 3.48)
