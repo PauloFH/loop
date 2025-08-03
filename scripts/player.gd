@@ -114,9 +114,14 @@ func create_corpse():
 	corpse_sprite.frame = sprite.frame
 	corpse_sprite.position = sprite.position
 	corpse.add_child(corpse_sprite)
+	
+	var corpse_collision_shape = CapsuleShape2D.new()
+	corpse_collision_shape.radius= 7
+	corpse_collision_shape.height = 19
+	
 	var player_collision = $CollisionShape2D
 	var collision = CollisionShape2D.new()
-	collision.shape = player_collision.shape.duplicate()
+	collision.shape = corpse_collision_shape
 	collision.position = player_collision.position
 	corpse.add_child(collision)
 	corpse.collision_layer = 1
