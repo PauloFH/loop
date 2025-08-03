@@ -6,7 +6,7 @@ enum KeyType { GOLD, SILVER }
 @export var animation_name: String = "open_gate"
 
 @onready var sprite = $Sprite2D
-@onready var animation_player = $AnimationPlayer
+@onready var animation_player = $AnimatedSprite2D
 @onready var area_2d = $Area2D
 
 var is_open = false
@@ -27,10 +27,11 @@ func open_gate(player):
 		return
 	is_open = true
 	player.use_key(required_key)
-	if animation_player and animation_player.has_animation(animation_name):
+	if animation_player:
 		animation_player.play(animation_name)
 		await animation_player.animation_finished
 		animation_player.pause()
+		$Area2D/CollisionShape2D.disabled = true
 	else:
 		print("Animação não encontrada: ", animation_name)
 	

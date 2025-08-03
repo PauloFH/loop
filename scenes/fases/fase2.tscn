@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyvlc4665ooqn"]
+[gd_scene load_steps=5 format=3 uid="uid://dtca2i6svjww7"]
 
 [ext_resource type="PackedScene" uid="uid://bqgbbcxdbpcvg" path="res://scenes/player/player.tscn" id="1_player"]
-[ext_resource type="PackedScene" uid="uid://q5w8f8j8f8j8" path="res://scenes/objects/PressurePlate.tscn" id="2_pressure_plate"]
-[ext_resource type="PackedScene" uid="uid://b5w8f8j8f8j8" path="res://scenes/objects/GateB.tscn" id="3_gate_b"]
-[ext_resource type="PackedScene" uid="uid://s5w8f8j8f8j8" path="res://scenes/objects/Stairs.tscn" id="4_stairs"]
+[ext_resource type="PackedScene" path="res://scenes/objects/PressurePlate.tscn" id="2_pressure_plate"]
+[ext_resource type="PackedScene" path="res://scenes/objects/GateB.tscn" id="3_gate_b"]
+[ext_resource type="PackedScene" path="res://scenes/objects/Stairs.tscn" id="4_stairs"]
 
 [node name="Fase2" type="Node2D"]
 

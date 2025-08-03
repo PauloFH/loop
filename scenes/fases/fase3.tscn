@@ -1,16 +1,15 @@
-[gd_scene load_steps=16 format=4 uid="uid://brfpsy25oopg6"]
+[gd_scene load_steps=15 format=4 uid="uid://cmewpv6xe2m52"]
 
 [ext_resource type="PackedScene" uid="uid://bqgbbcxdbpcvg" path="res://scenes/player/player.tscn" id="1_player"]
 [ext_resource type="Texture2D" uid="uid://wob0h2bx3q70" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_item_props_v2.png" id="1_r23at"]
 [ext_resource type="Texture2D" uid="uid://ddj3hc7fcpu6n" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_ynshr"]
 [ext_resource type="Texture2D" uid="uid://dgehyqr84c43m" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset_v2.png" id="3_54wv4"]
-[ext_resource type="PackedScene" uid="uid://d5w8f8j8f8j8" path="res://scenes/objects/GateR.tscn" id="4_gate_r"]
-[ext_resource type="PackedScene" uid="uid://co06uv67xi3m5" path="res://scripts/objects/wall.tscn" id="4_ynshr"]
-[ext_resource type="PackedScene" uid="uid://b5w8f8j8f8j8" path="res://scenes/objects/GateB.tscn" id="5_gate_b"]
-[ext_resource type="PackedScene" uid="uid://n5w8f8j8f8j8" path="res://scenes/objects/Button.tscn" id="6_button"]
+[ext_resource type="PackedScene" uid="uid://b2veq4l523ub" path="res://scenes/objects/GateR.tscn" id="4_gate_r"]
+[ext_resource type="PackedScene" path="res://scripts/objects/wall.tscn" id="4_ynshr"]
+[ext_resource type="PackedScene" path="res://scenes/objects/GateB.tscn" id="5_gate_b"]
+[ext_resource type="PackedScene" path="res://scenes/objects/Button.tscn" id="6_button"]
 [ext_resource type="PackedScene" uid="uid://ys64ayyd0eay" path="res://scenes/objects/coletaveis/chaves/key_g.tscn" id="6_h3nqd"]
-[ext_resource type="PackedScene" uid="uid://s5w8f8j8f8j8" path="res://scenes/objects/Stairs.tscn" id="7_stairs"]
-[ext_resource type="PackedScene" uid="uid://cjf2uertfo6qh" path="res://scenes/objects/coletaveis/chaves/key_m.tscn" id="10_r23at"]
+[ext_resource type="PackedScene" path="res://scenes/objects/Stairs.tscn" id="7_stairs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oyiik"]
 texture = ExtResource("1_r23at")
@@ -363,7 +362,17 @@ position = Vector2(160.287, 86.2459)
 z_index = 105
 position = Vector2(63.4639, 309.021)
 
-[node name="Keyf" parent="." instance=ExtResource("10_r23at")]
+[node name="Keyf" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(182.906, 85.1068)
+script = null
 
 [connection signal="activated" from="Button" to="GateR" method="open_gate"]
