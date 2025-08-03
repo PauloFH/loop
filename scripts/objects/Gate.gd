@@ -31,7 +31,7 @@ func open_gate(player):
 		animation_player.play(animation_name)
 		await animation_player.animation_finished
 		animation_player.pause()
-		$Area2D/CollisionShape2D.disabled = true
+		$CollisionShape2D2.disabled = true
 	else:
 		print("Animação não encontrada: ", animation_name)
 	

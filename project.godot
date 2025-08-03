@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneManager="*res://scripts/managers/SceneManager.gd"
-SettingsManager="*res://scripts/managers/SettingsManager.gd"
 GameManager="*res://scripts/managers/GameManager.gd"
 
 [display]

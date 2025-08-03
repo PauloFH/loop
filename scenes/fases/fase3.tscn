@@ -1,15 +1,15 @@
-[gd_scene load_steps=15 format=4 uid="uid://cmewpv6xe2m52"]
+[gd_scene load_steps=15 format=4 uid="uid://brfpsy25oopg6"]
 
 [ext_resource type="PackedScene" uid="uid://bqgbbcxdbpcvg" path="res://scenes/player/player.tscn" id="1_player"]
 [ext_resource type="Texture2D" uid="uid://wob0h2bx3q70" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_item_props_v2.png" id="1_r23at"]
 [ext_resource type="Texture2D" uid="uid://ddj3hc7fcpu6n" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_ynshr"]
 [ext_resource type="Texture2D" uid="uid://dgehyqr84c43m" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset_v2.png" id="3_54wv4"]
 [ext_resource type="PackedScene" uid="uid://b2veq4l523ub" path="res://scenes/objects/GateR.tscn" id="4_gate_r"]
-[ext_resource type="PackedScene" path="res://scripts/objects/wall.tscn" id="4_ynshr"]
-[ext_resource type="PackedScene" path="res://scenes/objects/GateB.tscn" id="5_gate_b"]
-[ext_resource type="PackedScene" path="res://scenes/objects/Button.tscn" id="6_button"]
+[ext_resource type="PackedScene" uid="uid://co06uv67xi3m5" path="res://scripts/objects/wall.tscn" id="4_ynshr"]
+[ext_resource type="PackedScene" uid="uid://b5w8f8j8f8j8" path="res://scenes/objects/GateB.tscn" id="5_gate_b"]
+[ext_resource type="PackedScene" uid="uid://n5w8f8j8f8j8" path="res://scenes/objects/Button.tscn" id="6_button"]
 [ext_resource type="PackedScene" uid="uid://ys64ayyd0eay" path="res://scenes/objects/coletaveis/chaves/key_g.tscn" id="6_h3nqd"]
-[ext_resource type="PackedScene" path="res://scenes/objects/Stairs.tscn" id="7_stairs"]
+[ext_resource type="PackedScene" uid="uid://s5w8f8j8f8j8" path="res://scenes/objects/Stairs.tscn" id="7_stairs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oyiik"]
 texture = ExtResource("1_r23at")
@@ -307,36 +307,52 @@ tile_set = SubResource("TileSet_cesrj")
 position = Vector2(209.268, 45.8893)
 rotation = -1.5708
 scale = Vector2(2.40486, 16.2692)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Wall" parent="." instance=ExtResource("4_ynshr")]
 position = Vector2(11.391, 0.325456)
 scale = Vector2(1, 18.0149)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Wall6" parent="Wall" instance=ExtResource("4_ynshr")]
 position = Vector2(274.197, 8.08453)
 scale = Vector2(44.3494, 0.0352348)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Wall2" parent="Wall" instance=ExtResource("4_ynshr")]
 position = Vector2(246.045, 7.94904)
 scale = Vector2(1, 0.337339)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Wall3" parent="Wall" instance=ExtResource("4_ynshr")]
 position = Vector2(37.9157, 14.2089)
 rotation = 1.5708
 scale = Vector2(0.135187, -10.8635)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Wall4" parent="Wall" instance=ExtResource("4_ynshr")]
 position = Vector2(102.519, 14.1908)
 scale = Vector2(1.14147, 0.289227)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Wall" parent="Wall" instance=ExtResource("4_ynshr")]
 position = Vector2(518.777, 1.79757)
 scale = Vector2(1, 18.0149)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Wall5" parent="Wall" instance=ExtResource("4_ynshr")]
 position = Vector2(6.83458, 19.7913)
 rotation = -1.5708
 scale = Vector2(0.0593941, 5.65997)
+collision_layer = 3
+collision_mask = 3
 
 [node name="GateR" parent="." instance=ExtResource("4_gate_r")]
 position = Vector2(337, 32)
@@ -361,18 +377,5 @@ position = Vector2(160.287, 86.2459)
 [node name="Player" parent="." instance=ExtResource("1_player")]
 z_index = 105
 position = Vector2(63.4639, 309.021)
-
-[node name="Keyf" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(182.906, 85.1068)
-script = null
 
 [connection signal="activated" from="Button" to="GateR" method="open_gate"]
