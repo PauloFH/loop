@@ -2,6 +2,8 @@ extends TrapBase
 
 # move o corpo imediatamente após pisar na trap
 func activate_trap(body: Node2D) -> void:
+	if body.is_ghost:
+		return
 	body.global_position = global_position + Vector2(0, -5)
 	body.take_damage(100)
 	can_trigger = false
