@@ -8,6 +8,11 @@ font_size = 30
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 248.0
+offset_top = 63.0
+offset_right = 248.0
+offset_bottom = 63.0
+scale = Vector2(1.65834, 1.72649)
 script = ExtResource("1_krd2w")
 
 [node name="ColorRect" type="ColorRect" parent="."]
