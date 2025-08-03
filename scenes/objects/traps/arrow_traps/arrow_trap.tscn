@@ -30,7 +30,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihydr"]
-size = Vector2(70, 20)
+size = Vector2(70, 8)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_uxfep")

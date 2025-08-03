@@ -4,7 +4,7 @@ var current_scene = null
 
 func _ready():
 	var root = get_tree().root
-	current_scene = root.get_child(root.get_child_count() - 1)
+	current_scene = root.get_child(- 1)
 
 func goto_scene(path: String):
 	call_deferred("_deferred_goto_scene", path)

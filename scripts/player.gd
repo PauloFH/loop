@@ -101,7 +101,7 @@ func become_ghost():
 	ghost_timer = ghost_time
 	sprite.modulate = Color(1, 1, 1, 0.5)
 	animation_player.play("idle" + last_direction)
-	collision_mask = 2
+	collision_layer = 2
 	
 	print("Virou fantasma!")
 
@@ -139,7 +139,7 @@ func generate_new_body():
 	is_dead = false
 	current_health = max_health
 	sprite.modulate = Color(1, 1, 1, 1.0)
-	collision_mask = 1
+	collision_layer = 1
 	
 	print("Gerou novo corpo!")
 

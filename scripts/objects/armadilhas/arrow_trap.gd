@@ -2,7 +2,6 @@ extends TrapBase
 
 @export var arrow_speed:float = 100
 @export var detect_area_size:float = 70
-@export var teste:Color
 const ARROW = preload("res://scenes/objects/traps/arrow_traps/arrow.tscn")
 
 func _ready():

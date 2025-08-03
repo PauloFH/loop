@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://dgehyqr84c43m" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset_v2.png" id="1_c60na"]
 [ext_resource type="PackedScene" uid="uid://bqgbbcxdbpcvg" path="res://scenes/player/player.tscn" id="1_player"]
-[ext_resource type="PackedScene" uid="uid://h5w8f8j8f8j8" path="res://scenes/objects/coletaveis/KeyG.tscn" id="2_key_g"]
+[ext_resource type="PackedScene" path="res://scenes/objects/coletaveis/KeyG.tscn" id="2_key_g"]
 [ext_resource type="Texture2D" uid="uid://ddj3hc7fcpu6n" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_o2gu6"]
 [ext_resource type="PackedScene" uid="uid://b2veq4l523ub" path="res://scenes/objects/GateR.tscn" id="3_gate_r"]
-[ext_resource type="PackedScene" uid="uid://s5w8f8j8f8j8" path="res://scenes/objects/Stairs.tscn" id="4_stairs"]
+[ext_resource type="PackedScene" path="res://scenes/objects/Stairs.tscn" id="4_stairs"]
 [ext_resource type="PackedScene" uid="uid://b7j2yf2am7fcr" path="res://scenes/objects/traps/arrow_traps/arrow_trap.tscn" id="7_o2gu6"]
 [ext_resource type="PackedScene" uid="uid://i0x8nm7mlt33" path="res://scenes/objects/traps/spike_traps/auto_floor_spikes.tscn" id="8_44kda"]
-[ext_resource type="PackedScene" uid="uid://co06uv67xi3m5" path="res://scripts/objects/wall.tscn" id="9_eov3t"]
-[ext_resource type="PackedScene" uid="uid://cjf2uertfo6qh" path="res://scenes/objects/coletaveis/chaves/key_m.tscn" id="10_dcj0g"]
+[ext_resource type="PackedScene" path="res://scripts/objects/wall.tscn" id="9_eov3t"]
+[ext_resource type="PackedScene" path="res://scenes/objects/coletaveis/chaves/key_m.tscn" id="10_dcj0g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44kda"]
 texture = ExtResource("1_c60na")
@@ -237,15 +237,17 @@ position = Vector2(305, 113)
 
 [node name="Stairs" parent="." instance=ExtResource("4_stairs")]
 position = Vector2(390, 89)
-next_level_path = "res://scenes/fases/fase2.tscn"
+next_level_path = "res://scenes/fases/fase3.tscn"
 
 [node name="Node2D" parent="." instance=ExtResource("7_o2gu6")]
 position = Vector2(191, 63)
 rotation = 1.5708
+arrow_speed = 50.0
 
 [node name="Node2D2" parent="." instance=ExtResource("7_o2gu6")]
 position = Vector2(191, 145)
 rotation = 4.71239
+arrow_speed = 50.0
 
 [node name="auto_floor_spike" parent="." instance=ExtResource("8_44kda")]
 position = Vector2(186, 169)
